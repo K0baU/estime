@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<script type="module">
+const f = () => {
+  document.body.textContent = new Date().getTime();
+  requestAnimationFrame(f);
+};
+f();
+</script>
+<style>
+body {
+  text-align: center;
+  padding: 3em 0;
+  background: black;
+  font-size: 8vw;
+  color: white;
+}
+</style>
