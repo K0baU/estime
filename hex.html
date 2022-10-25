@@ -2,7 +2,7 @@
 <title>unixtime</title>
 <script type="module">
 const f = () => {
-  document.body.textContent = new Date().getTime();
+  document.body.textContent = Math.floor(new Date().getTime() / 1000).toString(16).toUpperCase();
   requestAnimationFrame(f);
 };
 f();

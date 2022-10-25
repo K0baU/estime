@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>check unixtime</title>
+</head><body>
+<div contenteditable=true id=unixtime>1666666666666</div>
+<div id=datetime></div>
+<script type="module">
+import { DateTime } from "https://js.sabae.cc/DateTime.js";
+const f = () => {
+  const t = parseInt(unixtime.textContent);
+  datetime.textContent = new DateTime(t).toString();
+};
+f();
+unixtime.onkeyup = f;
+</script>
+<style>
+body {
+  text-align: center;
+  padding: 3em 0;
+  background: black;
+  font-size: 8vw;
+  color: white;
+}
+#datetime {
+  font-size: 3vw;
+}
+</style>
+</body>
+</html>
