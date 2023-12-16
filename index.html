@@ -1,8 +1,10 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
-<title>unixtime</title>
+<title>estime</title>
 <script type="module">
 const f = () => {
-  document.body.textContent = Date.now().toString(2);
+  const date = Date.now();
+  document.body.append((date>>20).toString(2));
+  document.body.append((date&(1<<20-1)).toString(2));
   requestAnimationFrame(f);
 };
 f();
