@@ -1,6 +1,12 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
 <title>estime</title>
 <script type="module">
+const add = (n, unit) = {
+  const p = document.createElement("p");
+  document.body.append(p);
+  p.append(n);
+  p.append(unit);
+}
 const f = () => {
   const date = Date.now();
   document.body.textContent = "";
