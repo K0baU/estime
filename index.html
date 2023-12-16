@@ -9,7 +9,7 @@ const add = n => {
 const f = () => {
   const date = Date.now();
   document.body.textContent = "";
-  add(/*(date>>20).toString(16)*/(date>>20)+"q");
+  add(/*(date>>20).toString(16)+"q"*/date);
   add((date>>16 & (1<<4)-1).toString(16)+":"+(date>>8 & (1<<8)-1).toString(16));
   requestAnimationFrame(f);
 };
