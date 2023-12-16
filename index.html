@@ -1,17 +1,17 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
 <title>estime</title>
 <script type="module">
-const add = (n, unit) = {
+const add = (n, unit) => {
   const p = document.createElement("p");
   document.body.append(p);
   p.append(n);
   p.append(unit);
-}
+};
 const f = () => {
   const date = Date.now();
   document.body.textContent = "";
-  document.body.append((date>>20).toString(2));
-  document.body.append((date & (1<<20)-1).toString(2));
+  add((date>>20).toString(2),"q");
+  add((date & (1<<20)-1).toString(2),"ms");
   requestAnimationFrame(f);
 };
 f();
