@@ -7,10 +7,14 @@ const add = n => {
   p.append(n);
 };
 const f = () => {
-  const date = Date.now();
+  let date = Date.now();
   document.body.textContent = "";
-  add((date>>20).toString(16)+"q");
-  add((date>>16 & (1<<4)-1).toString(16)+":"+(date>>8 & (1<<8)-1).toString(16));
+  const q = Math.floor(date / 2**20);
+  date -= q * 2**20;
+  add(q.toString(16)+"q");
+  const bmin = Math.floor(date / 2**16);
+  date -= bmin * 2**16;
+  add(bmin.toString(16)+":"+Math.floor(date / 2**8).toString(16));
   requestAnimationFrame(f);
 };
 f();
