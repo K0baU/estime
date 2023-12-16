@@ -11,7 +11,7 @@ const f = () => {
   const date = Date.now();
   document.body.textContent = "";
   add((date>>20).toString(2),"q");
-  add((date & (1<<8)-1<<12).toString(2),"gs");
+  add((date>>12 & (1<<8)-1).toString(2),"gs");
   add((date & (1<<12)-1).toString(2),"ms");
   requestAnimationFrame(f);
 };
