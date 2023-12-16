@@ -5,7 +5,7 @@ const f = () => {
   const date = Date.now();
   document.body.textContent = "";
   document.body.append((date>>20).toString(2));
-  document.body.append((date&(1<<20-1)).toString(2));
+  document.body.append((date & (1<<20)-1).toString(2));
   requestAnimationFrame(f);
 };
 f();
