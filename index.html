@@ -12,7 +12,7 @@ const f = () => {
   document.body.textContent = "";
   add((date>>20).toString(2),"q");
   add((date>>12 & (1<<8)-1).toString(2),"gs");
-  add((date & (1<<12)-1).toString(2),"ms");
+  add((date>>8 & (1<<4)-1).toString(2),"ls");
   requestAnimationFrame(f);
 };
 f();
