@@ -2,7 +2,7 @@
 <title>unixtime</title>
 <script type="module">
 const f = () => {
-  document.body.textContent = new Date().getTime();
+  document.body.textContent = Date.now().getTime().toString(2);
   requestAnimationFrame(f);
 };
 f();
