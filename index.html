@@ -10,6 +10,8 @@ const f = () => {
   const date = Date.now();
   document.body.textContent = "";
   add(date);
+  add(date+1);
+  add(date/2);
   add(/*(date>>20).toString(16)+"q"*/date>>0);
   add((date>>16 & (1<<4)-1).toString(16)+":"+(date>>8 & (1<<8)-1).toString(16));
   requestAnimationFrame(f);
