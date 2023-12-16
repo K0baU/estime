@@ -1,19 +1,16 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
 <title>estime</title>
 <script type="module">
-const add = (n, unit) => {
+const add = n => {
   const p = document.createElement("p");
   document.body.append(p);
   p.append(n);
-  p.append(unit);
 };
 const f = () => {
   const date = Date.now();
   document.body.textContent = "";
-  add((date>>20).toString(16),"q");
-  add((date>>16 & (1<<4)-1).toString(16),"bmin");
-  add((date>>12 & (1<<4)-1).toString(16),"gs");
-  add((date>>8 & (1<<4)-1).toString(16),"ls");
+  add((date>>20).toString(16)+"q");
+  add((date>>16 & (1<<4)-1).toString(16)+":"+(date>>8 & (1<<8)-1).toString(16));
   requestAnimationFrame(f);
 };
 f();
