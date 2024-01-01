@@ -1,6 +1,7 @@
 <!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
 <title>estime</title>
 <script type="module">
+const week = ["He", "Li", "Be", "B", "C", "N", "O", "F"]
 const add = n => {
   const p = document.createElement("p");
   document.body.append(p);
@@ -19,7 +20,7 @@ const f = () => {
   const bh = date % 2**4;
   date -= bh;
   date /= 2**4;
-  const bdw = date % 2**3;
+  const bdw = week[date % 2**3];
   const bd = date % 2**5;
   date -= bd;
   date /= 2**5;
